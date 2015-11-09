@@ -1,0 +1,12 @@
+.idea
+node_modules
+app/vendors
+
+*.log
+*.map
+
+build
+reports
+tmp
+
+.env
