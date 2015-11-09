@@ -28,14 +28,15 @@ class AppComponent {
     public title = 'Test Angular 2.0';
     public heroes = [];
     public selectedHero: any;
-    public static $inject = ['HeroService'];
 
     constructor() {
         var service = new HeroService();
         this.heroes = service.getHeroes();
     }
 
-    public onSelect(hero: any) { this.selectedHero = hero; }
+    public onSelect(hero: any) {
+        this.selectedHero = hero;
+    }
 
     public getSelectedClass(hero: any) {
         return { 'selected': hero === this.selectedHero };

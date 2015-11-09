@@ -18,11 +18,12 @@ var AppComponent = (function () {
         var service = new HeroService_1.HeroService();
         this.heroes = service.getHeroes();
     }
-    AppComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
+    AppComponent.prototype.onSelect = function (hero) {
+        this.selectedHero = hero;
+    };
     AppComponent.prototype.getSelectedClass = function (hero) {
         return { 'selected': hero === this.selectedHero };
     };
-    AppComponent.$inject = ['HeroService'];
     AppComponent = __decorate([
         angular2_1.Component({
             selector: 'my-app',
