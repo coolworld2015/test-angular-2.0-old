@@ -1,9 +1,9 @@
-var Heroes = (function () {
-    function Heroes() {
+var Hero1 = (function () {
+    function Hero1() {
     }
-    return Heroes;
+    return Hero1;
 })();
-var HEROES = [
+var HEROES1 = [
     { "id": 11, "name": "Mr. Nice" },
     { "id": 12, "name": "Narco" },
     { "id": 13, "name": "Bombasto" },

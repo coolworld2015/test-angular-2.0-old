@@ -1,10 +1,9 @@
-module hero {
-    export class hero {
+    class Hero1 {
         public id:number;
         public name:string;
     }
 
-    var HEROES:Hero[] = [
+    var HEROES1:Hero1[] = [
         {"id": 11, "name": "Mr. Nice"},
         {"id": 12, "name": "Narco"},
         {"id": 13, "name": "Bombasto"},
@@ -16,4 +15,3 @@ module hero {
         {"id": 19, "name": "Magma"},
         {"id": 20, "name": "Tornado"}
     ];
-}

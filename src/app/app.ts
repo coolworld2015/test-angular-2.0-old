@@ -1,6 +1,5 @@
 import {bootstrap, Component, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
-import {HEROES} from './hero';
-//import {HEROES} from 'heroes/hero';
+import {HeroService} from './HeroService';
 
 @Component({
     selector: 'my-app',
@@ -24,15 +23,22 @@ import {HEROES} from './hero';
       `],
 })
 
+
 class AppComponent {
     public title = 'Test Angular 2.0';
-    public heroes = HEROES;
-    public selectedHero:Hero;
+    public heroes = [];
+    public selectedHero: any;
+    public static $inject = ['HeroService'];
 
-    public onSelect(hero: Hero) { this.selectedHero = hero; }
+    constructor() {
+        var service = new HeroService();
+        this.heroes = service.getHeroes();
+    }
 
-    public getSelectedClass(hero: Hero) {
+    public onSelect(hero: any) { this.selectedHero = hero; }
+
+    public getSelectedClass(hero: any) {
         return { 'selected': hero === this.selectedHero };
     }
 }
-bootstrap(AppComponent);
+bootstrap(AppComponent, [HeroService]);

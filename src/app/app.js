@@ -10,17 +10,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var hero_1 = require('./hero');
-//import {HEROES} from 'heroes/hero';
+var HeroService_1 = require('./HeroService');
 var AppComponent = (function () {
     function AppComponent() {
         this.title = 'Test Angular 2.0';
-        this.heroes = hero_1.HEROES;
+        this.heroes = [];
+        var service = new HeroService_1.HeroService();
+        this.heroes = service.getHeroes();
     }
     AppComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
     AppComponent.prototype.getSelectedClass = function (hero) {
         return { 'selected': hero === this.selectedHero };
     };
+    AppComponent.$inject = ['HeroService'];
     AppComponent = __decorate([
         angular2_1.Component({
             selector: 'my-app',
@@ -32,4 +34,4 @@ var AppComponent = (function () {
     ], AppComponent);
     return AppComponent;
 })();
-angular2_1.bootstrap(AppComponent);
+angular2_1.bootstrap(AppComponent, [HeroService_1.HeroService]);
