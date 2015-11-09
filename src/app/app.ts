@@ -1,31 +1,9 @@
-import {bootstrap, Component, FORM_DIRECTIVES, NgFor} from 'angular2/angular2';
+import {bootstrap, Component, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
 
 @Component({
     selector: 'my-app',
-    template: `<center>
-    <h2>My Heroes</h2>
-    <ul class="heroes">
-        <li *ng-for="#hero of heroes" (click)="onSelect(hero)">
-          <span class="badge">{{hero.id}}</span> {{hero.name}}
-        </li>
-    </ul>
-    <hr>
-
-         <table border="1" width="100%">
-            <th>ID</th>
-            <th>Name</th>
-            <tr *ng-for="#hero of heroes" (click)="onSelect(hero)">
-                <td>{{hero.id}}</td>
-                <td>{{hero.name}}</td>
-            </tr>
-        </table>
-        <hr>
-            <h2>
-                {{selectedHero.name}}<br>
-                <input [(ng-model)]="selectedHero.name" placeholder="name">
-            </h2>
-    `,
-    directives: [FORM_DIRECTIVES, NgFor],
+    templateUrl: 'app/heroes.html',
+    directives: [CORE_DIRECTIVES, FORM_DIRECTIVES],
     styles: [`
       .heroes {list-style-type: none; margin-left: 1em; padding: 0; width: 10em;}
       .heroes li { cursor: pointer; position: relative; left: 0; transition: all 0.2s ease; }
@@ -48,11 +26,12 @@ class AppComponent {
     public title = 'Test Angular 2.0';
     public heroes = HEROES;
     public selectedHero:Hero;
-    selectedHero = {
-        id: HEROES[0].id,
-        name: HEROES[0].name,
-    };
+
     public onSelect(hero: Hero) { this.selectedHero = hero; }
+
+    public getSelectedClass(hero: Hero) {
+        return { 'selected': hero === this.selectedHero };
+    }
 }
 bootstrap(AppComponent);
 
