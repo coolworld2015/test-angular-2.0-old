@@ -11,8 +11,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "tsc": "tsc -p src -w",
-    "start": "live-server --open=src"
+    "tsc": "tsc -p app -w",
+    "start": "live-server --open=app/src"
   },
   "author": "",
   "license": "ISC"

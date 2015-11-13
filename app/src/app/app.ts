@@ -23,7 +23,6 @@ import {HeroService} from './HeroService';
       `],
 })
 
-
 class AppComponent {
     public title = 'Test Angular 2.0';
     public heroes = [];
