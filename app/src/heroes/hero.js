@@ -2,7 +2,7 @@ var Hero1 = (function () {
     function Hero1() {
     }
     return Hero1;
-})();
+}());
 var HEROES1 = [
     { "id": 11, "name": "Mr. Nice" },
     { "id": 12, "name": "Narco" },

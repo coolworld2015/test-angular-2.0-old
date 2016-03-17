@@ -1,8 +1,9 @@
+"use strict";
 var Hero = (function () {
     function Hero() {
     }
     return Hero;
-})();
+}());
 var HeroService = (function () {
     function HeroService() {
         this.heroes = [
@@ -22,5 +23,5 @@ var HeroService = (function () {
         return this.heroes;
     };
     return HeroService;
-})();
+}());
 exports.HeroService = HeroService;
